@@ -25,3 +25,12 @@ main {
 .icon-block i {
   font-size: 75px;
 }
+
+mark {
+  background-color: rgb(73, 204, 91);
+  color: white;
+}
+
+.css-selector {
+  font-family: 'ZCOOL+XiaoWei', serif;
+}
