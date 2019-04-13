@@ -31,3 +31,39 @@ mark {
   background-color: rgb(73, 204, 91);
   color: white;
 }
+
+/* label color */
+.input-field label {
+    color: black;
+}
+/* label focus color */
+.input-field input[type=email]:focus + label, .input-field input[type=password]:focus + label {
+    color: yellow;
+}
+/* label underline focus color */
+.input-field input[type=email]:focus, .input-field input[type=password]:focus {
+    border-bottom: 1px solid yellow;
+    box-shadow: 0 1px 0 0 yellow;
+}
+/* valid color */
+.input-field input[type=text].valid {
+    border-bottom: 1px solid green;
+    box-shadow: 0 1px 0 0 green;
+}
+/* invalid color */
+.input-field input[type=text].invalid {
+    border-bottom: 1px solid red;
+    box-shadow: 0 1px 0 0 red;
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+    color: yellow;
+}
+/* radio button colors */
+.with-gap[type="radio"]:checked+label:after {
+    background-color: green;
+    border-color: green;
+}
+.with-gap[type="radio"]:checked+label:before {
+    border-color: green;
+}
