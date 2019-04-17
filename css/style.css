@@ -10,26 +10,26 @@
 
 /* Code to sticky the footer to the bottom of the window.*/
 body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 main {
-  flex: 1 0 auto;
+    flex: 1 0 auto;
 }
 
 .parallax-container {
-  height: 400px;
+    height: 400px;
 }
 
 .icon-block i {
-  font-size: 75px;
+    font-size: 75px;
 }
 
 mark {
-  background-color: rgb(73, 204, 91);
-  color: white;
+    background-color: rgb(73, 204, 91);
+    color: white;
 }
 
 /* label color */

@@ -10,56 +10,96 @@
 		<link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32"/>
 		<link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16"/>
 		<!-- Import Google Icon Font -->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        <!-- Import materialize.css -->
-        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-        <!-- Let browser know website is optimized for mobile -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link href="https://fonts.googleapis.com/css?family=ZCOOL+XiaoWei" rel="stylesheet">
+		<!-- Import materialize.css -->
+		<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+		<!-- Let browser know website is optimized for mobile -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<!-- CSS  -->
-	    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-	    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+		<link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+		<link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 	</head>
 
 	<body>
 		<header>
-			<nav class="teal" role="navigation">
-                <div class="nav-wrapper container">
-                    <a href="index.html" class="brand-logo">CastSource</a>
-                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                    <ul class="right hide-on-med-and-down">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="login.html">Log In</a></li>
+			<nav class="green" role="navigation">
+				<div class="nav-wrapper container">
+					<a href="index.html" class="brand-logo" style="font-family: 'ZCOOL XiaoWei', serif;">CastSource</a>
+					<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+					<ul class="right hide-on-med-and-down">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="login.html">Log In</a></li>
 						<li class="active"><a href="create_account.html">Create Account</a></li>
-                    </ul>
-                    <ul class="side-nav" id="mobile-demo">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="login.html">Log In</a></li>
+					</ul>
+					<ul class="side-nav" id="mobile-demo">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="login.html">Log In</a></li>
 						<li class="active"><a href="create_account.html">Create Account</a></li>
-                    </ul>
-                </div>
-            </nav>
+					</ul>
+				</div>
+			</nav>
 		</header>
 
 		<main class="main">
-			<div id="index-banner" class="parallax-container">
-				<div class="section no-pad-bot">
-					<div class="container">
-						<br><br>
-						<h1 class="header center teal-text text-lighten-2">Welcome</h1>
-						<div class="row center">
-							<h5 class="header col s12 light">CastSource</h5>
-						</div>
-						<div class="row center">
-							<a href="create_account.html" target="_blank" id="create-account-button" class="btn-large waves-effect waves-light teal lighten-1">Create Account</a>
-						</div>
-						<br><br>
-					</div>
-				</div>
-			</div>
+            <br><br>
+            <div class="container">
+                <div class="row center">
+                    <form class="col s12" action="/create_account_action.php" method="post">
+                        <div class="row center">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">email</i>
+                                <input id="email" type="email" class="validate">
+                                <label for="email" data-error="Invalid Email" data-success="Valid Email">Email</label>
+                            </div>
+                        </div>
+                        <div class="row center">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">email</i>
+                                <input id="email_repeat" type="email" class="validate">
+                                <label for="email_repeat" data-error="Emails do not match" data-success="Emails match">Repeat Email</label>
+                            </div>
+                        </div>
+                        <div class="row center">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">vpn_key</i>
+                                <input id="password" type="password" class="validate">
+                                <label for="password">Password</label>
+                            </div>
+                        </div>
+                        <div class="row center">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">vpn_key</i>
+                                <input id="password_repeat" type="password" class="validate">
+                                <label for="password_repeat" data-error="Passwords do not match" data-success="Passwords match">Repeat Password</label>
+                            </div>
+                        </div>
+                        <div class="row center">
+                            <div class="input-field col s6">
+                                <p>
+                                    <input class="with-gap" name="actorOrDirector" id="actor" type="radio" checked />
+                                    <label for="actor"> Actor </label>
+                                </p>
+                                <p>
+                                    <input class="with-gap" name="actorOrDirector" id="director" type="radio" />
+                                    <label for="director"> Director </label>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row center">
+                            <input type="submit" value="Create Account" id="create_account" class="btn-large waves-effect waves-light green lighten-1">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="parallax-container">
+                <div class="parallax"><img src="images/vienna_concert.jpg"></div>
+            </div>
 		</main>
 
-		<footer class="page-footer teal">
+		<footer class="page-footer green">
 			<div class="container">
 				<div class="row">
 					<div class="col l6 s12">
