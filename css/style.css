@@ -37,21 +37,21 @@ mark {
     color: black;
 }
 /* label focus color */
-.input-field input[type=email]:focus + label, .input-field input[type=password]:focus + label {
+.input-field input[type]:focus + label {
     color: yellow;
 }
 /* label underline focus color */
-.input-field input[type=email]:focus, .input-field input[type=password]:focus {
+.input-field input[type]:focus {
     border-bottom: 1px solid yellow;
     box-shadow: 0 1px 0 0 yellow;
 }
 /* valid color */
-.input-field input[type=text].valid {
+.input-field input[type=email].valid, .input-field input[type=password].valid {
     border-bottom: 1px solid green;
     box-shadow: 0 1px 0 0 green;
 }
 /* invalid color */
-.input-field input[type=text].invalid {
+.input-field input[type=email].invalid, .input-field input[type=password].invalid {
     border-bottom: 1px solid red;
     box-shadow: 0 1px 0 0 red;
 }
@@ -66,4 +66,27 @@ mark {
 }
 .with-gap[type="radio"]:checked+label:before {
     border-color: green;
+}
+
+.picker__date-display, .picker__weekday-display {
+    background-color: green;
+}
+.picker__day.picker__day--today {
+    color: green;
+}
+.picker__day.picker__day--infocus.picker__day--selected.picker__day--highlighted {
+    background-color: green;
+}
+.picker__today {
+    color: green;
+}
+.picker__clear {
+    color: red;
+}
+.picker__close {
+    color: yellow;
+}
+
+ul.dropdown-content.select-dropdown li span {
+    color: black;
 }
