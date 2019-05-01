@@ -44,6 +44,7 @@ mark {
 .input-field input[type]:focus {
     border-bottom: 1px solid magenta;
     box-shadow: 0 1px 0 0 magenta;
+}
 /* valid color */
 .input-field input[type=email].valid, .input-field input[type=password].valid {
     border-bottom: 1px solid green;
@@ -57,11 +58,6 @@ mark {
 /* icon prefix focus color */
 .input-field .prefix.active {
     color: magenta;
-}
-
-/* icon prefix inactive focus color */
-.input-field .prefix.inactive {
-    color: red;
 }
 
 /* radio button colors */

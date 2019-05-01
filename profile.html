@@ -91,6 +91,30 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
+                        <i class="material-icons prefix">mode_edit</i>
+                        <textarea id="description" class="materialize-textarea" data-length="500"></textarea>
+                        <label for="description">Description of yourself</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">face</i>
+                        <p>
+                            <input class="with-gap" name="sex" id="male" value="m" type="radio" />
+                            <label for="male"> Male </label>
+                        </p>
+                        <p>
+                            <input class="with-gap" name="sex" id="female" value="f" type="radio" />
+                            <label for="female"> Female </label>
+                        </p>
+                        <p>
+                            <input class="with-gap" name="sex" id="unspecified" value="u" type="radio" />
+                            <label for="unspecified"> Unspecified </label>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
                         <i class="material-icons prefix">calendar_today</i>
                         <input id="dob" type="text" class="datepicker" required>
                         <label for="dob">Date of Birth</label>
@@ -102,13 +126,31 @@
                         <select class="select" id="region" multiple required>
                             <option disabled>Choose a Region or Regions</option>
                             <optgroup label="Texas">
-                                <option value="setx">South East</option>
-                                <option value="swtx">South West</option>
-                                <option value="netx">North East</option>
-                                <option value="nwtx">North West</option>
+                                <option value="hou">Houston</option>
+                                <option value="san">San Antonio</option>
+                                <option value="dal">Dallas</option>
+                                <option value="atx">Austin</option>
+                                <option value="ftw">Fort Worth</option>
+                                <option value="elp">El Paso</option>
+                                <option value="cc">Corpus Christi</option>
+                                <option value="lub">Lubbock</option>
+                                <option value="amar">Amarillo</option>
+                                <option value="brwn">Brownsville</option>
+                                <option value="waco">Waco</option>
                             </optgroup>
                         </select>
                         <label for="region">Region</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="file-field input-field">
+                        <div class="btn green">
+                            <span>File</span>
+                            <input type="file" multiple>
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text" placeholder="Upload resumes or headshots">
+                        </div>
                     </div>
                 </div>
                 <div class="row center">
