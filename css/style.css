@@ -38,12 +38,12 @@ mark {
 }
 /* label focus color */
 .input-field input[type=email]:focus + label, .input-field input[type=password]:focus + label {
-    color: yellow;
+    color: magenta;
 }
 /* label underline focus color */
 .input-field input[type=email]:focus, .input-field input[type=password]:focus {
-    border-bottom: 1px solid yellow;
-    box-shadow: 0 1px 0 0 yellow;
+    border-bottom: 1px solid magenta;
+    box-shadow: 0 1px 0 0 magenta;
 }
 /* valid color */
 .input-field input[type=text].valid {
@@ -57,8 +57,14 @@ mark {
 }
 /* icon prefix focus color */
 .input-field .prefix.active {
-    color: yellow;
+    color: magenta;
 }
+
+/* icon prefix inactive focus color */
+.input-field .prefix.inactive {
+    color: red;
+}
+
 /* radio button colors */
 .with-gap[type="radio"]:checked+label:after {
     background-color: green;
