@@ -46,7 +46,7 @@
     <br><br>
     <div class="container">
         <div class="row">
-            <form class="col s12" action="https://castsource.actor//cgi-bin/update-profile.cgi" method="post">
+            <form class="col s12 formValidate" id="formValidate" action="https://castsource.actor//cgi-bin/update-profile.cgi" method="post">
                 <div class="row">
                     <div class="input-field col s6">
                         <i class="material-icons prefix">email</i>
@@ -64,29 +64,29 @@
                 <div class="row">
                     <div class="input-field col s6">
                         <i class="material-icons prefix">vpn_key</i>
-                        <input id="password" type="password" class="validate" pattern="^\S{6,}$" required>
-                        <label for="password" data-error="Password must be at least 6 characters long" data-success="Password is secure">Password</label>
+                        <input id="password" type="password" class="validate" required>
+                        <label for="password">Password</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
                         <i class="material-icons prefix">vpn_key</i>
-                        <input id="password_repeat" type="password" class="validate" pattern="^\S{6,}$" required>
-                        <label for="password_repeat" data-error="Passwords do not match" data-success="Passwords match">Repeat Password</label>
+                        <input id="password_repeat" type="password" class="validate" required>
+                        <label for="password_repeat">Repeat Password</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="first_name" type="text" required>
-                        <label for="first_name">First Name</label>
+                        <input id="name" type="text" required>
+                        <label for="name">Name</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="last_name" type="text" required>
-                        <label for="last_name">Last Name</label>
+                        <input id="pref_name" type="text">
+                        <label for="pref_name">Preferred Name</label>
                     </div>
                 </div>
                 <div class="row">
@@ -149,7 +149,7 @@
                     <div class="file-field input-field">
                         <div class="btn green">
                             <span>File</span>
-                            <input type="file" multiple>
+                            <input type="file" multiple disabled>
                         </div>
                         <div class="file-path-wrapper">
                             <input class="file-path validate" type="text" placeholder="Upload resumes or headshots">
@@ -178,13 +178,46 @@
     </div>
     <!-- Copyright/Last Updated Container -->
     <div class="footer-copyright">
-        <div class="container"> Last Updated: April 12, 2019 </div>
+        <div class="container"> Last Updated: May 1, 2019 </div>
     </div>
 </footer>
 
 <!-- Import javascripts -->
 <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="js/additional-methods.min.js"></script>
 <script type="text/javascript" src="js/materialize.min.js"></script>
 <script type="text/javascript" src="js/javascript.js"></script>
+<script type="text/javascript">
+    $("#formValidate").validate({
+        rules: {
+            password: {
+                required: true,
+                minlength: 6
+            },
+            password_repeat: {
+                required: true,
+                minlength: 6,
+                equalTo: "#password"
+            }
+        },
+        //For custom messages
+        messages: {
+            password:{
+                required: "Enter a password",
+                minlength: "Passwords must be at least 6 characters long"
+            }
+        },
+        errorElement : 'div',
+        errorPlacement: function(error, element) {
+            var placement = $(element).data('error');
+            if (placement) {
+                $(placement).append(error)
+            } else {
+                error.insertAfter(element);
+            }
+        }
+    });
+</script>
 </body>
 </html>
