@@ -60,6 +60,10 @@ mark {
     color: magenta;
 }
 
+.input-field textarea:focus + label.active {
+    color: magenta;
+}
+
 /* radio button colors */
 .with-gap[type="radio"]:checked+label:after {
     background-color: green;

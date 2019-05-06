@@ -64,17 +64,28 @@
                 <div class="row">
                     <div class="input-field col s6">
                         <i class="material-icons prefix">vpn_key</i>
-                        <input id="password" type="password" minlength="6" class="validate" required>
-                        <label for="password">Password</label>
+                        <input id="password" type="password" minlength="6" oninput="check(this)" class="validate" required>
+                        <label for="password" data-error="Password must be at least 6 characters" data-success="Valid password">Password</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
                         <i class="material-icons prefix">vpn_key</i>
-                        <input id="password_repeat" type="password" minlength="6" equal="password" class="validate" required>
-                        <label for="password_repeat">Repeat Password</label>
+                        <input id="password_repeat" type="password" minlength="6" oninput="check(this)" class="validate" required>
+                        <label for="password_repeat" data-error="Passwords do not match" data-success="Passwords match">Repeat Password</label>
                     </div>
                 </div>
+                <script type="text/javascript">
+                    function check(input) {
+                        if (document.getElementById('password').value != document.getElementById('password_repeat').value) {
+                            document.getElementById('password').setCustomValidity('Passwords do not match.');
+                            document.getElementById('password_repeat').setCustomValidity('Passwords do not match.');
+                        } else {
+                            document.getElementById('password').setCustomValidity('');
+                            document.getElementById('password_repeat').setCustomValidity('');
+                        }
+                    }
+                </script>
                 <div class="row">
                     <div class="input-field col s6">
                         <i class="material-icons prefix">account_circle</i>
@@ -184,40 +195,7 @@
 
 <!-- Import javascripts -->
 <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
-<script type="text/javascript" src="js/jquery.validate.min.js"></script>
-<script type="text/javascript" src="js/additional-methods.min.js"></script>
 <script type="text/javascript" src="js/materialize.min.js"></script>
 <script type="text/javascript" src="js/javascript.js"></script>
-<script type="text/javascript">
-    $("#formValidate").validate({
-        rules: {
-            password: {
-                required: true,
-                minlength: 5,
-            },
-            password_repeat: {
-                required: true,
-                minlength: 5,
-                equalTo: "#password"
-            },
-        },
-        //For custom messages
-        messages: {
-            password:{
-                required: "Enter a password",
-                minlength: "Password must be at least 6 characters long"
-            },
-        },
-        errorElement : 'div',
-        errorPlacement: function(error, element) {
-            var placement = $(element).data('error')    ;
-            if (placement) {
-                $(placement).append(error)
-            } else {
-                error.insertAfter(element);
-            }
-        }
-    });
-</script>
 </body>
 </html>
