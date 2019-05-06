@@ -28,13 +28,13 @@
                     <a class="brand-logo" style="font-family: 'ZCOOL XiaoWei', serif;">CastSource</a>
                     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down">
-                        <li class="active"><a href="/profile.html">Profile</a></li>
-                        <li><a href="/search.html">Search</a></li>
+                        <li><a href="/profile.html">Profile</a></li>
+                        <li class="active"><a href="/search.html">Search</a></li>
                         <li><a href="/logout.html" class="btn-large waves-effect waves-light green lighten-1">Log Out</a></li>
                     </ul>
                     <ul class="side-nav" id="mobile-demo">
-                        <li class="active"><a href="/profile.html">Profile</a></li>
-                        <li><a href="/search.html">Search</a></li>
+                        <li><a href="/profile.html">Profile</a></li>
+                        <li class="active"><a href="/search.html">Search</a></li>
                         <li><a href="/logout.html" class="btn-large waves-effect waves-light green lighten-1">Log Out</a></li>
                     </ul>
                 </div>
@@ -42,10 +42,90 @@
         </header>
 
         <main class="main">
+            <div class="container">
+                <div class="row">
+                    <form class="col s12" action="https://castsource.actor//cgi-bin/search.cgi" method="post">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input id="name" name="name" type="text">
+                                <label for="name">Name</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">wc</i>
+                                <br/>
+                                <p>
+                                    <input class="with-gap" name="sex" id="male" value="m" type="radio" />
+                                    <label for="male"> Male </label>
+                                </p>
+                                <p>
+                                    <input class="with-gap" name="sex" id="female" value="f" type="radio" />
+                                    <label for="female"> Female </label>
+                                </p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">calendar_today</i>
+                                <input id="dob" name="dob" type="text" class="datepicker">
+                                <label for="dob">Date of Birth</label>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">room</i>
+                                <select class="select" id="region" name="region" multiple>
+                                    <option disabled>Choose a Region or Regions</option>
+                                    <optgroup label="Texas">
+                                        <option value="hou">Houston</option>
+                                        <option value="san">San Antonio</option>
+                                        <option value="dal">Dallas</option>
+                                        <option value="atx">Austin</option>
+                                        <option value="ftw">Fort Worth</option>
+                                        <option value="elp">El Paso</option>
+                                        <option value="cc">Corpus Christi</option>
+                                        <option value="lub">Lubbock</option>
+                                        <option value="amar">Amarillo</option>
+                                        <option value="brwn">Brownsville</option>
+                                        <option value="waco">Waco</option>
+                                    </optgroup>
+                                </select>
+                                <label for="region">Region</label>
+                            </div>
+                        </div>
+                        <div class="row left">
+                            <input type="submit" value="Search" id="search" class="btn-large green">
+                        </div>
+                    </form>
+                </div>
+            </div>
             <br><br>
             <div class="container">
                 <div class="row">
                     <h2>Search results:</h2>
+                    <div class="card horizontal">
+                        <!-- <div class="card-image">
+                            <img src="">
+                        </div> !-->
+                        <div class="card-stacked">
+                            <div class="card-content">
+                                <span class="card-title">*name*</span>
+                                <p>*preferred_name*</p>
+                                <p>*role*</p>
+                                <p>*sex*</p>
+                                <p>*dob*</p>
+                                <p>*regions*</p>
+                                <p>*desc*</p>
+                            </div>
+                            <div class="card-action">
+                                <a href="mailto:*email*">Send *name* an email</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>
