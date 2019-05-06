@@ -56,24 +56,42 @@
                         <div class="row center">
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">email</i>
-                                <input id="email_repeat" name="email_repeat" type="email" class="validate" required>
+                                <input id="email_repeat" name="email_repeat" type="email" oninput="checkEmail(this)" class="validate" required>
                                 <label for="email_repeat" data-error="Emails do not match" data-success="Emails match">Repeat Email</label>
                             </div>
                         </div>
+                        <script type="text/javascript">
+                            function checkEmail(input) {
+                                if (document.getElementById('email').value != document.getElementById('email_repeat').value) {
+                                    input.setCustomValidity('Emails do not match.');
+                                } else {
+                                    input.setCustomValidity('');
+                                }
+                            }
+                        </script>
                         <div class="row center">
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">vpn_key</i>
-                                <input id="password" name="password" type="password" class="validate" required>
-                                <label for="password">Password</label>
+                                <input id="password" name="password" type="password" minlength="6" class="validate" required>
+                                <label for="password" data-error="Password must be at least 6 characters" data-success="Valid password.">Password</label>
                             </div>
                         </div>
                         <div class="row center">
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">vpn_key</i>
-                                <input id="password_repeat" name="password_repeat" type="password" class="validate" required>
+                                <input id="password_repeat" name="password_repeat" type="password" minlength="6" oninput="checkPassword(this)" class="validate" required>
                                 <label for="password_repeat" data-error="Passwords do not match" data-success="Passwords match">Repeat Password</label>
                             </div>
                         </div>
+                        <script type="text/javascript">
+                            function checkPassword(input) {
+                                if (document.getElementById('password').value != document.getElementById('password_repeat').value) {
+                                    input.setCustomValidity('Passwords do not match.');
+                                } else {
+                                    input.setCustomValidity('');
+                                }
+                            }
+                        </script>
                         <div class="row center">
                             <div class="input-field col s6">
                                 <p>

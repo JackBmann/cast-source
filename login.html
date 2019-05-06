@@ -56,8 +56,8 @@
                         <div class="row center">
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">vpn_key</i>
-                                <input name="password" id="password" type="password" class="validate" required>
-                                <label for="password">Password</label>
+                                <input name="password" id="password" type="password" minlength="6" class="validate" required>
+                                <label for="password" data-error="Password must be at least 6 characters" data-success="Valid password.">Password</label>
                             </div>
                         </div>
                         <div class="row center">
