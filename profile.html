@@ -49,71 +49,67 @@
                         <div class="row">
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">email</i>
-                                <input id="email" type="email" oninput="check1(this)" class="validate" autofocus required>
+                                <input id="email" name="email" type="email" class="validate" autofocus>
                                 <label for="email" data-error="Invalid Email" data-success="Valid Email">Email</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">email</i>
-                                <input id="email_repeat" type="email" oninput="check1(this)" class="validate" required>
+                                <input id="email_repeat" name="email_repeat" type="email" oninput="checkEmail(this)" class="validate">
                                 <label for="email_repeat" data-error="Emails do not match" data-success="Emails match">Repeat Email</label>
                             </div>
                         </div>
                         <script type="text/javascript">
-                            function check1(input) {
+                            function checkEmail(input) {
                                 if (document.getElementById('email').value != document.getElementById('email_repeat').value) {
-                                    document.getElementById('email').setCustomValidity('Emails do not match.');
-                                    document.getElementById('email_repeat   ').setCustomValidity('Emails do not match.');
+                                    input.setCustomValidity('Emails do not match.');
                                 } else {
-                                    document.getElementById('email').setCustomValidity('');
-                                    document.getElementById('email_repeat').setCustomValidity('');
+                                    input.setCustomValidity('');
                                 }
                             }
                         </script>
                         <div class="row">
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">vpn_key</i>
-                                <input id="password" type="password" minlength="6" oninput="check(this)" class="validate">
+                                <input id="password" name="password" type="password" minlength="6" class="validate">
                                 <label for="password" data-error="Password must be at least 6 characters" data-success="Valid password.">Password</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">vpn_key</i>
-                                <input id="password_repeat" type="password" minlength="6" oninput="check(this)" class="validate">
+                                <input id="password_repeat" name="password_repeat" type="password" minlength="6" oninput="checkPassword(this)" class="validate">
                                 <label for="password_repeat" data-error="Passwords do not match" data-success="Passwords match.">Repeat Password</label>
                             </div>
                         </div>
                         <script type="text/javascript">
-                            function check(input) {
+                            function checkPassword(input) {
                                 if (document.getElementById('password').value != document.getElementById('password_repeat').value) {
-                                    document.getElementById('password').setCustomValidity('Passwords do not match.');
-                                    document.getElementById('password_repeat').setCustomValidity('Passwords do not match.');
+                                    input.setCustomValidity('Passwords do not match.');
                                 } else {
-                                    document.getElementById('password').setCustomValidity('');
-                                    document.getElementById('password_repeat').setCustomValidity('');
+                                    input.setCustomValidity('');
                                 }
                             }
                         </script>
                         <div class="row">
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">account_circle</i>
-                                <input id="name" type="text" required>
+                                <input id="name" name="name" type="text">
                                 <label for="name">Name</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">account_circle</i>
-                                <input id="pref_name" type="text">
-                                <label for="pref_name">Preferred Name</label>
+                                <input id="preferred_name" name="preferred_name" type="text">
+                                <label for="preferred_name">Preferred Name</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">mode_edit</i>
-                                <textarea id="description" class="materialize-textarea" data-length="500"></textarea>
+                                <textarea id="description" name="description" class="materialize-textarea" data-length="500"></textarea>
                                 <label for="description">Description Of Yourself</label>
                             </div>
                         </div>
@@ -139,7 +135,7 @@
                         <div class="row">
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">calendar_today</i>
-                                <input id="dob" type="text" class="datepicker" required>
+                                <input id="dob" name="dob" type="text" class="datepicker">
                                 <label for="dob">Date of Birth</label>
                             </div>
                         </div>
@@ -147,7 +143,7 @@
                         <div class="row">
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">room</i>
-                                <select class="select" id="region" multiple required>
+                                <select class="select" id="region" name="region" multiple>
                                     <option disabled>Choose a Region or Regions</option>
                                     <optgroup label="Texas">
                                         <option value="hou">Houston</option>
@@ -170,10 +166,10 @@
                             <div class="file-field input-field">
                                 <div class="btn green">
                                     <span>File</span>
-                                    <input type="file" multiple disabled>
+                                    <input type="file" id="file" name="file" multiple disabled>
                                 </div>
                                 <div class="file-path-wrapper">
-                                    <input class="file-path validate" type="text" placeholder="Upload resumes or headshots">
+                                    <input class="file-path validate" id="filename" name="filename" type="text" placeholder="Upload resumes or headshots">
                                 </div>
                             </div>
                         </div>
