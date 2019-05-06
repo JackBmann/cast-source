@@ -64,14 +64,14 @@
                 <div class="row">
                     <div class="input-field col s6">
                         <i class="material-icons prefix">vpn_key</i>
-                        <input id="password" type="password" class="validate" required>
+                        <input id="password" type="password" minlength="6" class="validate" required>
                         <label for="password">Password</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
                         <i class="material-icons prefix">vpn_key</i>
-                        <input id="password_repeat" type="password" class="validate" required>
+                        <input id="password_repeat" type="password" minlength="6" equal="password" class="validate" required>
                         <label for="password_repeat">Repeat Password</label>
                     </div>
                 </div>
@@ -193,24 +193,24 @@
         rules: {
             password: {
                 required: true,
-                minlength: 6
+                minlength: 5,
             },
             password_repeat: {
                 required: true,
-                minlength: 6,
+                minlength: 5,
                 equalTo: "#password"
-            }
+            },
         },
         //For custom messages
         messages: {
             password:{
                 required: "Enter a password",
-                minlength: "Passwords must be at least 6 characters long"
-            }
+                minlength: "Password must be at least 6 characters long"
+            },
         },
         errorElement : 'div',
         errorPlacement: function(error, element) {
-            var placement = $(element).data('error');
+            var placement = $(element).data('error')    ;
             if (placement) {
                 $(placement).append(error)
             } else {
